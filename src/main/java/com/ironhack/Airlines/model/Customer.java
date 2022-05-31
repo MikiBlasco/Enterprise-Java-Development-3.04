@@ -1,6 +1,7 @@
 package com.ironhack.Airlines.model;
+import com.ironhack.Airlines.model.enums.Status;
+
 import javax.persistence.*;
-import java.math.BigInteger;
 
 @Entity
 @Table(name="customer")
@@ -40,12 +41,11 @@ public class Customer {
         this.nombre = nombre;
     }
 
-    public Status getStatus() {
-        return status;
+    public String getStatus() {
+        return this.status.name();
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setStatus(String status) {
+        this.status = Status.valueOf(status);
     }
-
 }

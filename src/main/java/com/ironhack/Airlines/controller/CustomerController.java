@@ -20,4 +20,9 @@ public class CustomerController {
         return customerService.getAllCustomers();
     }
 
+    @GetMapping ("/customer-names")
+    public List<Customer> showAllCustomerNames(){
+        return customerService.getAllCustomerNames();
+    }
+
 }
