@@ -22,7 +22,7 @@ public class AircraftController {
     }
 
     @GetMapping("/aircrafts-more-than-300-seats")
-    public List<Aircraft> getAircraftsWithMoreThan200Seats(){
+    public List<Aircraft> getAircraftsWithMoreThan300SeatsNewName(){
         return aircraftService.getAircraftsWithMoreThan300Seats();
     }
 

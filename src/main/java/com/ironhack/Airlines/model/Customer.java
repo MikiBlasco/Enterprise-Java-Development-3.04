@@ -1,5 +1,6 @@
 package com.ironhack.Airlines.model;
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @Entity
 @Table(name="customer")
@@ -9,7 +10,19 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
-    private String status;
+    @Column(columnDefinition = "enum")
+    private Status status;
+
+    private long customer_mileage;
+
+
+    public long getCustomer_mileage() {
+        return customer_mileage;
+    }
+
+    public void setCustomer_mileage(long customer_mileage) {
+        this.customer_mileage = customer_mileage;
+    }
 
     public Integer getId() {
         return id;
@@ -27,11 +40,12 @@ public class Customer {
         this.nombre = nombre;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
+
 }
