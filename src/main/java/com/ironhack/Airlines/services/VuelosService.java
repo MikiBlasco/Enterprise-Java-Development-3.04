@@ -18,4 +18,8 @@ public class VuelosService {
         return vuelosRepository.findAll();
     }
 
+   /* public List <Vuelos> getAllFlightsByString(String str){
+        return vuelosRepository.findAllFlightsNumberContains(str);
+    }*/
+
 }

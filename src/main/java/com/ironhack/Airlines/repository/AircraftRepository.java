@@ -12,5 +12,4 @@ public interface AircraftRepository extends JpaRepository<Aircraft, Integer> {
 
 
 
-
 }

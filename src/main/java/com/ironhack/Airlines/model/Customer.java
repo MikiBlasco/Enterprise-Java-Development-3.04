@@ -1,5 +1,5 @@
 package com.ironhack.Airlines.model;
-import com.ironhack.Airlines.model.enums.Status;
+import com.ironhack.Airlines.enums.Status;
 
 import javax.persistence.*;
 
@@ -11,11 +11,21 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
-    @Column(columnDefinition = "enum")
+    @Column(columnDefinition = "ENUM('Gold', 'Silver', 'Gold')")
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     private long customer_mileage;
 
+    public Customer(){
+
+    }
+    public Customer(Integer id, String nombre, Status status, long customer_mileage) {
+        this.id = id;
+        setNombre(nombre);
+        setStatus(status);
+        setCustomer_mileage(customer_mileage);
+    }
 
     public long getCustomer_mileage() {
         return customer_mileage;
@@ -41,11 +51,19 @@ public class Customer {
         this.nombre = nombre;
     }
 
-    public String getStatus() {
+    /* public String getStatus() {
         return this.status.name();
     }
 
     public void setStatus(String status) {
         this.status = Status.valueOf(status);
+    } */
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }
